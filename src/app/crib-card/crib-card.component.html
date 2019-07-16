@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card" style="margin: 10px">
     <img src="assets/images/{{c.image}}.jpg" alt="" class="img-fluid">
     <div class="caption">
         <div *ngIf="!showDetails">
@@ -9,7 +9,7 @@
               </h4>
               <h3>
                 <i class="glyphicon glyphicon-tag"></i> 
-                  {{ c.price | currency:'USD':false }}
+                  {{ c.price | currency:'USD':true }}
               </h3>
               <h4>
                 <i class="glyphicon glyphicon-home"></i> 
