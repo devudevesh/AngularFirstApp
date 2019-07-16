@@ -9,9 +9,11 @@ import {cribs} from './../Data/cribs';
 export class CribListingComponent implements OnInit {
 
   cribs: Array<any> = cribs;
+  showDetails: boolean;
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }

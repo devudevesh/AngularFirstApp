@@ -1,12 +1,7 @@
 <div class="container">
     <div class="row">
-            <div *ngFor = "let c of cribs" class="col-sm-4">
-                    <div class="card">
-                            <img src="assets/images/{{c.image}}.jpg" alt="" class="img-fluid">
-                            <H3>{{c.address}}</H3>
-                            <H4>{{c.price}}</H4>
-                            <p>{{c.type}}</p>
-                    </div>
-            </div>
+        <div *ngFor="let c of cribs">
+            <app-crib-card [crib] = "c" class="col-sm-4"></app-crib-card>   
+        </div>
     </div>
 </div>
