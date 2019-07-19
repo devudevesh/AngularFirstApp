@@ -7,18 +7,23 @@ import { CribListingComponent } from './crib-listing/crib-listing.component';
 import { CribCardComponent } from './crib-card/crib-card.component';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule} from '@angular/common/http';
+import { ApiResponseComponent } from './api-response/api-response.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     CribListingComponent,
     CribCardComponent,
-    CalculatorComponent
+    CalculatorComponent,
+    ApiResponseComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
