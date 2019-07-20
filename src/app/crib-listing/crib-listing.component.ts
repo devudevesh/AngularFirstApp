@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { map } from 'rxjs/operators';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { CribModel } from './../crib-model';
+//import { map } from 'rxjs/operators';
+//import { HttpClient } from '@angular/common/http';
+import { CribsService } from './../Services/cribs.service';
+//import * as _ from 'lodash';
 
 @Component({
   selector: 'app-crib-listing',
@@ -12,12 +12,22 @@ import { CribModel } from './../crib-model';
 export class CribListingComponent implements OnInit {
 
   cribs: Array<any> ;
-  customers: Array<any>;
+  error: string;
   showDetails: boolean;
-  constructor(private http : HttpClient) { }
+  constructor(
+    //private http : HttpClient,
+    private CribService : CribsService 
+    ) { }
 
   ngOnInit() {
-    
+   /* this.http.get('Data/cribs.json')
+    .pipe(map(res => _.values(res)))
+    .subscribe(data => this.cribs = data);*/
+
+    this.CribService.getAllCribs().subscribe(
+      data => this.cribs = data,
+      error => this.error = error.statusText
+      );
   }
 
 }
